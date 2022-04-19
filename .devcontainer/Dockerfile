@@ -38,5 +38,6 @@ RUN if [ "${HTTP_PROXY}" != "none" ]; then echo 'Acquire::http::Proxy "\"${HTTP_
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends tree
 
+RUN su vscode -c "umask 0002 && . /usr/local/sdkman/bin/sdkman-init.sh && sdk install springboot"
 
-
+RUN su vscode -c "umask 0002 && . /usr/local/sdkman/bin/sdkman-init.sh && unset http_proxy && unset https_proxy && sdk install java 22.0.0.2.r17-grl"

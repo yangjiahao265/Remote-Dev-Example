@@ -1,0 +1,23 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+
+ linux:
+    name: Linux
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v3
+
+      # TODO: rename azure-pipelines/linux/xvfb.init to github-actions
+      - name: Echo Test
+        run: |
+          echo hello
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
