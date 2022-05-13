@@ -40,4 +40,6 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 
 RUN su vscode -c "umask 0002 && . /usr/local/sdkman/bin/sdkman-init.sh && sdk install springboot"
 
-# RUN su vscode -c "umask 0002 && . /usr/local/sdkman/bin/sdkman-init.sh && sdk install java 22.0.0.2.r17-grl"
+COPY --chown=vscode:sdkman java-22.0.0.2.r17-grl.zip /usr/local/sdkman/tmp/
+
+RUN su vscode -c "umask 0002 && . /usr/local/sdkman/bin/sdkman-init.sh && sdk install java 22.0.0.2.r17-grl"

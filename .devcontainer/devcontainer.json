@@ -9,7 +9,7 @@
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
 		"java.home": "/docker-java-home",
-		"http.proxy": "http://192.168.3.55:7890",
+		"http.proxy": "http://192.168.3.144:7890",
 		"http.proxyStrictSSL": false,
 		"remote.downloadExtensionsLocally": true,
 		"remote.containers.copyGitConfig": true

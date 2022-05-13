@@ -1,7 +1,8 @@
-version: '3.8'
+# version: '3.8'
 
 volumes:
   postgres-data:
+
 
 services:
   app:
@@ -40,7 +41,7 @@ services:
       http_proxy: ${HTTP_PROXY}
       https_proxy: ${HTTP_PROXY}
       no_proxy: ${NO_PROXY}
-      
+
     volumes:
       - ..:/workspace:cached
 
